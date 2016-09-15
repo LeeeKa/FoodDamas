@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.food.persistence.MemberMapper">
+	<insert id="insertMember">
+		insert tbl_customer (c_id, c_pw, c_name, c_phone, c_mail) values(#{c_id},#{c_pw},#{c_name},#{c_phone},#{c_mail})
+	</insert>
+	
+	<select id="checkId" resultType="java.lang.String">
+		select c_id from tbl_customer where c_id=#{c_id}
+	</select>
+	
+	<!-- 카카오톡 회원가입 가입유무 -->
+	<select id="checkKakao" resultType="java.lang.String">
+		select k_id from tbl_customer where k_id=#{k_id}
+	</select>
+
+</mapper>
