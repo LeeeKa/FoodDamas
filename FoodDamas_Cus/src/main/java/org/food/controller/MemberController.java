@@ -55,29 +55,41 @@ public class MemberController {
 		
 	}
 	
-/*	
+	
 	@ResponseBody
 	@RequestMapping(value = "/registerKakao", method = RequestMethod.POST)
 	public String kakaoPOST(MemberVO vo) {
 		logger.info(""+vo);
-			String k_id=service.checkKakao(k_id)
-		if(result==null){
+			String k_id=service.checkKakao(vo.getK_id());
+	/*	if(result==null){
 			return "redirect:/member/register";
-		}
+		}*/
 		//return service.checkKakao(vo.getK_id());
-		System.out.println(result);
-		return service.checkKakao(vo.getK_id());
-	}*/
+		//System.out.println(result);
+	//	return service.checkKakao(vo.getK_id());
+			return k_id;
+	}
 	
 	
-	@ResponseBody
+	/*@ResponseBody
 	@RequestMapping(value = "/registerKakao/", method = RequestMethod.GET)
 	public void kakaoGET(MemberVO vo, Model model ) {
 		logger.info("왜겟으로 안사라져");
-	/*	logger.info("여기fff는 겟"+vo);
+	}*/
+	
+	@RequestMapping(value = "/registerKakao1", method = RequestMethod.POST)
+	public String kakaoGET(MemberVO vo, Model model ) {
+		logger.info("왜겟으로 f안ffSdddddddds사라져");
 		
-		service.checkId(vo.getK_id());
+		return "redirect:/member/test";
+		
+	}
 
-		//return service.checkKakao(vo.getK_id());
-*/	}
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public void test(MemberVO vo, Model model ) {
+		logger.info("test");
+		
+	
+		
+	}
 }

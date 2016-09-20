@@ -77,15 +77,14 @@
                 			  thumb_img:res.properties.thumbnail_image
                 	  }
                 		console.log(obj);
-                	    window.location = 'http://localhost/member/registerKakao/'+obj;
-         /*      		$.ajax({
+               		$.ajax({
             			url: 'http://localhost/member/registerKakao',
             			//contentType : "application/json;charset=UTF-8",
-            			type:"get",
+            			type:"post",
             			data:obj,
             			success:function(checkKakao){
 							if(checkKakao==""){
-								
+								reigsterKakao(obj);
 							}else{
 								alert("이미 가입한 회원입니다.");
 
@@ -103,7 +102,7 @@
             				}
             			} */
          
-            	//	}); */
+            		}); 
                     
                   },
                   fail: function(error) {
@@ -116,8 +115,20 @@
               }
         });
         
-        function reigsterKakao(data) {
-        				
+        function reigsterKakao(params) {
+        	   // method = method || "post";
+        	    var form = document.createElement("form");
+        	    form.setAttribute("method", "post");
+        	    form.setAttribute("action", "/member/registerKakao1");
+        	    for(var key in params) {
+        	        var hiddenField = document.createElement("input");
+        	        hiddenField.setAttribute("type", "hidden");
+        	        hiddenField.setAttribute("name", key);
+        	        hiddenField.setAttribute("value", params[key]);
+        	        form.appendChild(hiddenField);
+        	    }
+        	    document.body.appendChild(form);
+        	    form.submit();			
 		}
     };
 	</script>
