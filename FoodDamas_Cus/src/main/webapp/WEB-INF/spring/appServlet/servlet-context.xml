@@ -24,8 +24,23 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="org.food.controller" />
 
+	<!-- 로그인인터셉터들 -->
+	<beans:bean id="LoginInterceptor" class="org.food.interceptor.LoginInterceptor"></beans:bean>
+		<beans:bean id="AuthInterceptor" class="org.food.interceptor.AuthInterceptor"></beans:bean>
+	
+	<interceptors>
+		<interceptor>
+			<mapping path="/member/loginPost" />
+			<beans:ref bean="LoginInterceptor" />
+		</interceptor>
+				<interceptor>
+			<mapping path="/member/register" />
+			<beans:ref bean="AuthInterceptor" />
+		</interceptor>
 
+	</interceptors>
+		<context:component-scan base-package="org.food.controller" />
+	
 
 </beans:beans>

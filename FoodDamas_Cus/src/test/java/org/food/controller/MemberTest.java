@@ -20,12 +20,27 @@ public class MemberTest {
 	@Test
 	public void insertMember() {
 		MemberVO vo=new MemberVO();
-		vo.setC_id("lky");
-		vo.setC_pw("123");
-		vo.setC_name("이가영");
-		vo.setC_phone("010999999999");
+		vo.setC_id("lk1y");
+		vo.setC_pw("123123");
+		vo.setC_name("131");
+		vo.setC_phone("010999123999999");
 		vo.setC_mail("lky-1991@hanmail.net");
 		dao.insertMember(vo);
+		
+	}
+	@Test
+	public void insertkakaoMember() {
+		MemberVO vo=new MemberVO();
+		vo.setC_id("lky1234");
+		vo.setC_pw("123");
+		vo.setC_name("이가영123");
+		vo.setC_phone("010999999999");
+		vo.setC_mail("lky-1991@hanmail.net");
+		vo.setK_id("1");
+		vo.setK_nick("1");
+		vo.setThumb_img("1");
+		vo.setProfile_img("1");
+		dao.insertKakaoMember(vo);
 		
 	}
 

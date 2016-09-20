@@ -30,16 +30,30 @@
 
 </style>
 <body>
-
+<script type="text/javascript">
+	var k_id='${checkId}';
+	console.log(k_id);
+	if(k_id!=""){
+		alert('이미 회원가입을 하였습니다.');
+ 		window.location.replace("/member/login");
+	}else{
+		alert('이름, 핸드폰, 메일주소를 작성해주세요');
+	}
+		
+</script>
+	
 <div class="page-container">
     <h1>Register Kakao</h1>
-     <form action="/member/register" method="post">
-        <input type="text" name="c_id" class="c_id" placeholder="아이디" onkeyup="idCheck()">
-       		 <ul id="checkId" style="margin-top: 10px;"> </ul>
+
+     <form action="/member/registerKakaomember" method="post">
+        <input type="text" name="c_id" class="c_id" placeholder="아이디" value='${member.k_id }' onkeyup="idCheck()" readonly="readonly">
+        <input type="text" name="c_pw" class="c_pw" placeholder="패스워드" value='${member.k_id }'  hidden>
+        <input type="text" name="k_id" class="k_id" placeholder="카카오톡닉네임" value='${member.k_id }'  hidden>
+        <input type="text" name="k_id" class="k_id" placeholder="카카오톡닉네임" value='${member.k_id }'  hidden>
+        <input type="text" name="thumb_img" class="thumb_img" placeholder="카카오톡 썸네일" value='${member.thumb_img }' hidden >
+        <input type="text" name="profile_img" class="profile_img" placeholder="카카오톡 프사" value='${member.profile_img }' hidden>
+        <input type="text" name="k_nick" class="k_nick" placeholder="카카오톡 닉네임" value='${member.k_nick}' readonly>
         <input type="text" name="c_name" class="c_name" placeholder="이름">
-        <input type="password" name="c_pw" class="c_pw" placeholder="비밀번호">
-        <input type="password" name="confirmC_pw" class="confirmC_pw"  placeholder="비밀번호확인" onkeyup="checkPassword()">
-        <ul id="checkPasswordText" style="margin-top: 10px;"> </ul>
         <input type="text" name="c_phone" class="c_phone" placeholder="핸드폰">
         <input type="email" name="c_mail" class="c_mail" placeholder="메일">
 
@@ -59,8 +73,8 @@
 <script src="assets/js/jquery-1.8.2.min.js"></script>
 <script src="assets/js/supersized.3.2.7.min.js"></script>
 <script src="assets/js/supersized-init.js"></script>
-<script src="assets/js/scripts.js"></script>
-
+<!-- <script src="assets/js/scripts.js"></script>
+ -->
 </body>
 
 </html>

@@ -34,18 +34,10 @@ jQuery(document).ready(function() {
             });
             return false;
         }
-        else if(c_name == '') {
-            $(this).find('.error').fadeOut('fast', function(){
-                $(this).css('top', '96px');
-            });
-            $(this).find('.error').fadeIn('fast', function(){
-                $(this).parent().find('.c_name').focus();
-            });
-            return false;
-        }
+
         else if(c_pw == '') {
             $(this).find('.error').fadeOut('fast', function(){
-                $(this).css('top', '165px');
+                $(this).css('top', '97px');
             });
             $(this).find('.error').fadeIn('fast', function(){
                 $(this).parent().find('.c_pw').focus();
@@ -53,31 +45,6 @@ jQuery(document).ready(function() {
             return false;
         }
 
-        else if(c_phone == '') {
-            $(this).find('.error').fadeOut('fast', function(){
-                $(this).css('top', '329px');
-            });
-            $(this).find('.error').fadeIn('fast', function(){
-                $(this).parent().find('.c_phone').focus();
-            });
-            return false;
-        }
-        else if(c_mail == '') {
-            $(this).find('.error').fadeOut('fast', function(){
-                $(this).css('top', '398px');
-            });
-            $(this).find('.error').fadeIn('fast', function(){
-                $(this).parent().find('.c_mail').focus();
-            });
-            return false;
-        }
-         if(c_pw!==confirmC_pw){
-            $(this).find('.error').fadeOut('fast', function(){
-            	alert("비밀번호가 다릅니다.")
-            });
-            return false;
-
-        }
 
     });
 

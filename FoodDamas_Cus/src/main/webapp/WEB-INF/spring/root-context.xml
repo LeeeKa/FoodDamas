@@ -14,10 +14,10 @@
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
 		<property name="driverClass" value="org.mariadb.jdbc.Driver" />
-		<property name="url" value="jdbc:mariadb://127.0.0.1:3306/foodtruck"></property><!-- database name -->
-		<property name="username" value="root">
+		<property name="url" value="jdbc:mariadb://192.168.0.19:3308/foodtruck"></property><!-- database name -->
+		<property name="username" value="food">
 		</property><!-- username -->
-		<property name="password" value="1234">
+		<property name="password" value="food">
 		</property><!-- password -->
 	</bean>
 	<!-- 트랜잭션여기추가 -->

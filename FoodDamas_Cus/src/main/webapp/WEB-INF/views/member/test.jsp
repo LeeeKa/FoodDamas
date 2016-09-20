@@ -33,6 +33,8 @@
 
 <div class="page-container">
     <h1>test</h1>
+    <h1>${k_id }ee</h1>
+    <h1>${k_id1}ee</h1>
      <form action="/member/register" method="post">
         <input type="text" name="c_id" class="c_id" placeholder="아이디" onkeyup="idCheck()">
        		 <ul id="checkId" style="margin-top: 10px;"> </ul>
